@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>{{ tituloModal }} Departamento</h2>
+<mat-dialog-content>
+    <form [formGroup]="formularioDepto">
+        <mat-grid-list cols="1" rowHeight="90px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput autocomplete="off" formControlName="nombre">
+                    <mat-icon matSuffix>fit_screen</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="datosDepto != null">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nuevo Aumento (%)</mat-label>
+                    <input matInput autocomplete="off" max="100" min="1" type="number" formControlName="aumento">
+                    <mat-icon matSuffix>trending_up</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                        <mat-option value="1">Activo</mat-option>
+                        <mat-option value="2">Inactivo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" 
+    [disabled]="formularioDepto.invalid"
+    (click)="guardarEditarDepto()">{{ botonModal }}</button>
+    <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+</mat-dialog-actions>

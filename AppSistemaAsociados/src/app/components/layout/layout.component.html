@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>Autorización de Aumentos</h1>
+        <span style="flex: 1 1 auto;"></span>
+        <label style="font-size: .60em; margin-right: 20px; float: right;"> {{ nombre }} </label>
+        <button mat-icon-button (click)="cerrarSesion()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 250px;">
+        <mat-nav-list>
+            <mat-list-item *ngFor="let item of listaMenus" [routerLink]="item.url">
+                <mat-icon mat-list-icon> {{ item.icono }} </mat-icon>
+                <div mat-line> {{ item.etiqueta }} </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 90vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
