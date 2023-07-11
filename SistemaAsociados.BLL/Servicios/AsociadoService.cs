@@ -7,6 +7,7 @@ using SistemaAsociados.DTO;
 using SistemaAsociados.Model;
 using SistemaAsociados.Utils;
 using System.Runtime.InteropServices.ComTypes;
+using System.Text;
 
 namespace SistemaAsociados.BLL.Servicios
 {
@@ -140,7 +141,9 @@ namespace SistemaAsociados.BLL.Servicios
 
         public async Task<bool> Editar(AsociadoDetalleDTO model)
         {
-            hashed = HashPassword.CreateSHAHash(model.Clave);
+            string base64EncodedString = model.Clave;
+            string decodedPwd = Encoding.GetEncoding(28591).GetString(Convert.FromBase64String(base64EncodedString));
+            hashed = HashPassword.CreateSHAHash(decodedPwd);
             try
             {
                 var asociadoModelo = _mapper.Map<AsociadoDetalleDTO>(model);
@@ -162,7 +165,7 @@ namespace SistemaAsociados.BLL.Servicios
                     throw new TaskCanceledException("No existe el usuario");
 
                 usuarioEncontrado.Email = asociadoModelo.Email;
-                usuarioEncontrado.Clave = hashed;
+                usuarioEncontrado.Clave = usuarioEncontrado.Clave.Equals(decodedPwd) ? usuarioEncontrado.Clave : hashed;
                 usuarioEncontrado.Status = asociadoModelo.Status;
 
                 res = await _usuarioRepository.Editar(usuarioEncontrado);
