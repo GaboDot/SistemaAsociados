@@ -8,6 +8,14 @@ Para iniciar sesión los datos de prueba son los siguientes: <br/>
 
 # Versiones
 Las versiones para crear este demo son las siguientes: <br/>
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
 `Angular CLI: 16.0.3` <br/>
 `Node: 18.16.0` <br/>
 `Package Manager: npm 9.6.7` <br/>
