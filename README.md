@@ -7,14 +7,8 @@ Para iniciar sesión los datos de prueba son los siguientes: <br/>
 `clave: admin`
 
 # Versiones
-Las versiones para crear este demo son las siguientes: <br/>
-     _                      _                 ____ _     ___
-    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
-  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
- /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-                |___/
-
+Las versiones para crear este demo son las siguientes: <br/><br/>
+![image](https://github.com/GaboDot/SistemaAsociados/assets/8822582/6ab2716e-4d90-4b36-9234-cb2692e645a6)
 
 `Angular CLI: 16.0.3` <br/>
 `Node: 18.16.0` <br/>
